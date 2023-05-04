@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta charset="UTF-8"> 
+	<title>musical Arena</title>
+	<script type="text/javascript" src="code.js"></script>
+	<link rel="stylesheet" type="text/css" href="header.css">
+	<link rel="stylesheet" type="text/css" href="background.css">
+	<style>
+	body{
+		margin: 0;
+	}
+	#third{
+			width: 100%;
+			height: 80px;
+			padding: 20px;
+			padding-bottom: 0px;
+			padding-top: 10px;
+			float: left;
+			position: fixed;
+			bottom: 0;
+			left:0;
+			background-color: rgba(1,1,1,0.8);
+			color:rgb(250,250,250);
+			font-family: "Segoe Script";
+		}
+		 #mod{
+			display: inline;
+			position: absolute;
+			right: 50px;
+		}
+audio{
+		position: fixed;
+		margin-top: 28px;
+		right: 20px;
+		width: 90%;
+		}
+label{
+
+	font-family: "Segoe Script";
+	width: 500px;
+	height: 10px;
+}
+#xyz{
+			display: inline;
+			position: absolute;
+			
+		}
+	</style>
+</head>
+
+
+
+<body>
+	<br><br><br><br><br>
+	<div id="first">
+		<h1 font-family="verdana" align="center" style="font-size: 40px;color: white;margin: 0;">Music Player<h1>
+		</div>
+	<!--<div id="second" class="second">
+
+		<button onclick="myFunction()">
+	</div>
+	-->
+
+	<script src="code.js"></script>
+
+		<div id="queue"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Queue<input type="button" id="next" onclick="nextsong()"><hr></div>
+
+	<div id="third">
+		<div id="emoji"></div>
+		<div id="xyz">
+		&nbsp;&nbsp;&nbsp;Playing :&nbsp;&nbsp;
+		<label id="sname" align="center">none</label></div>
+		<div id="mod">mode : Queue-mode <input type="radio" name="mode" checked="checked" onclick="setmod(this)" value="1"> &nbsp;&nbsp;Random-mode 
+			<input type="radio" name="mode" onclick="setmod(this)" value="2"></div>
+		<audio controls id="main_slider">
+  		<source id="sel"  type="audio/mpeg">
+Your browser does not support the audio element.
+		</audio>
+
+		<script>
+	document.getElementById("main_slider").onended=function(){
+		if(mod==1)
+			next_in_Q();
+		
+		else
+			rand_play();
+
+	};
+
+
+		</script>
+		</div>
+		</body>
+		
+</html>
